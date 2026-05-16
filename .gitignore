@@ -5,6 +5,7 @@ build/
 .env.local
 *.log
 .DS_Store
+*.tsbuildinfo
 
 # Terraform
 **/.terraform/*
