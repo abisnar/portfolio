@@ -8,6 +8,7 @@ import { Education } from './views/Education';
 import { Skills } from './views/Skills';
 import { BulletList } from './views/BulletList';
 import { DownloadResumeButton } from './views/DownloadResumeButton';
+import { ResumeDocument } from './views/ResumeDocument';
 import { useResume } from './controllers/useResume';
 import { useAnalytics } from './controllers/useAnalytics';
 
@@ -44,6 +45,8 @@ export function App() {
           <span>Built with React + TypeScript</span>
         </footer>
       </main>
+
+      <ResumeDocument resume={resume} />
     </>
   );
 }
