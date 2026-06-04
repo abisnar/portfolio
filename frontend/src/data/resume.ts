@@ -24,7 +24,7 @@ export const resume: Resume = {
       kind: 'summary',
       title: 'Summary',
       text:
-        'Technical Product Leader with 8+ years designing, shipping, and scaling enterprise data platforms across AppNeta, Vision Critical, Splunk, and Aires. MBA candidate at SFU Beedie, translating customer pain points into strategy and roadmap priorities. Skilled at bridging engineering, design, and business to deliver data-driven, user-centric, and cost-optimized products that improve collaboration and productivity.',
+        'Technical Product Leader with 8+ years designing, shipping, and scaling enterprise data platforms across AppNeta, Vision Critical, Splunk, and Aires. MBA candidate at SFU Beedie, translating customer pain points into strategy and roadmap priorities. An early adopter of AI-augmented development — pairing with Cursor and Claude, building MCP integrations, and orchestrating tools like Notion to compress delivery cycles. Skilled at bridging engineering, design, and business to deliver data-driven, user-centric, and cost-optimized products that improve collaboration and productivity.',
     },
     {
       id: 'experience',
@@ -44,6 +44,7 @@ export const resume: Resume = {
             'Built the contract-signing and audit subsystems end to end — DocuSeal integration, server-driven signer roles and signing order, and an FSM-based sub-audit approval flow.',
             'Stood up Redis-backed job-queue/dispatcher/worker infrastructure and third-party integrations (Nylas email/calendar sync, Aircall, webhooks), with async-local-context observability via Winston and Loki.',
             'Re-platformed the React admin onto the v2 APIs with inline editing, per-field RBAC and audit trails, collapsing client business logic into thin renderers over server-driven DTOs.',
+            'Accelerated delivery with AI-augmented workflows — pair-programming with Cursor and Claude, building MCP servers to connect agents to internal systems, and wiring Notion into planning and documentation to keep specs, tickets, and code in sync.',
           ],
         },
         {
@@ -150,6 +151,11 @@ export const resume: Resume = {
         'Terraform',
         'Flink',
         'AI/ML-Driven Insights',
+        'AI-Augmented Development',
+        'Cursor',
+        'Claude',
+        'MCP (Model Context Protocol)',
+        'Notion',
         'Cross-Functional Collaboration',
       ],
     },
