@@ -1,4 +1,5 @@
 import type { Profile } from '../models/Resume';
+import { initials } from '../lib/initials';
 
 interface Props {
   profile: Profile;
@@ -6,12 +7,7 @@ interface Props {
 }
 
 export function Hero({ profile, onLinkClick }: Props) {
-  const initials = profile.name
-    .split(' ')
-    .map((w) => w[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase();
+  const monogram = initials(profile.name);
 
   return (
     <header id="top" className="hero">
@@ -21,7 +17,7 @@ export function Hero({ profile, onLinkClick }: Props) {
         {profile.photo ? (
           <img className="hero-avatar hero-avatar--photo" src={profile.photo} alt={profile.name} />
         ) : (
-          <div className="hero-avatar">{initials}</div>
+          <div className="hero-avatar">{monogram}</div>
         )}
         <p className="hero-eyebrow">Hello, I’m</p>
         <h1 className="hero-name">{profile.name}</h1>

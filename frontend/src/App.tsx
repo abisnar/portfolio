@@ -2,11 +2,8 @@ import { useEffect } from 'react';
 import { Nav } from './views/Nav';
 import { Hero } from './views/Hero';
 import { Section } from './views/Section';
-import { Summary } from './views/Summary';
-import { Experience } from './views/Experience';
-import { Education } from './views/Education';
-import { Skills } from './views/Skills';
-import { BulletList } from './views/BulletList';
+import { renderSection } from './views/sections/renderSection';
+import { webSectionRenderers } from './views/sections/webSectionRenderers';
 import { DownloadResumeButton } from './views/DownloadResumeButton';
 import { ResumeDocument } from './views/ResumeDocument';
 import { useResume } from './controllers/useResume';
@@ -31,11 +28,7 @@ export function App() {
 
         {resume.sections.map((section) => (
           <Section key={section.id} id={section.id} title={section.title}>
-            {section.kind === 'summary' && <Summary text={section.text} />}
-            {section.kind === 'experience' && <Experience items={section.items} />}
-            {section.kind === 'education' && <Education items={section.items} />}
-            {section.kind === 'skills' && <Skills items={section.items} />}
-            {section.kind === 'list' && <BulletList items={section.items} />}
+            {renderSection(webSectionRenderers, section)}
           </Section>
         ))}
 

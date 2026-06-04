@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { initials } from '../lib/initials';
 
 interface NavItem {
   id: string;
@@ -31,17 +32,12 @@ export function Nav({ name, items }: Props) {
     return () => observer.disconnect();
   }, [items]);
 
-  const initials = name
-    .split(' ')
-    .map((w) => w[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase();
+  const mark = initials(name);
 
   return (
     <nav className="topnav" aria-label="Section navigation">
       <a className="topnav-brand" href="#top">
-        <span className="topnav-mark">{initials}</span>
+        <span className="topnav-mark">{mark}</span>
         <span className="topnav-name">{name}</span>
       </a>
       <ul className="topnav-links">
