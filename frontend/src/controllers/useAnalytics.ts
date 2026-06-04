@@ -1,14 +1,7 @@
-import { useMemo } from 'react';
 import { useServices } from '../services/ServicesContext';
+import type { Analytics } from '../services/analytics';
 
-export function useAnalytics() {
-  const { analytics } = useServices();
-
-  return useMemo(
-    () => ({
-      trackView: (name: string) => analytics.track(`view:${name}`),
-      trackClick: (name: string) => analytics.track(`click:${name}`),
-    }),
-    [analytics],
-  );
+/** Exposes the injected analytics service to components. */
+export function useAnalytics(): Analytics {
+  return useServices().analytics;
 }

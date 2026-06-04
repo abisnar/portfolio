@@ -1,17 +1,14 @@
 import { createContext, useContext, type ReactNode } from 'react';
-import type { AnalyticsService } from './AnalyticsService';
-import { HttpAnalyticsService } from './HttpAnalyticsService';
-import { NoopAnalyticsService } from './NoopAnalyticsService';
+import { createAnalytics, type Analytics } from './analytics';
 
 export interface Services {
-  analytics: AnalyticsService;
+  analytics: Analytics;
 }
 
-export function buildServices(opts: { apiEndpoint?: string }): Services {
-  const analytics: AnalyticsService = opts.apiEndpoint
-    ? new HttpAnalyticsService(opts.apiEndpoint)
-    : new NoopAnalyticsService();
-  return { analytics };
+export function buildServices(opts: { apiEndpoint?: string; debug?: boolean } = {}): Services {
+  return {
+    analytics: createAnalytics({ endpoint: opts.apiEndpoint, debug: opts.debug }),
+  };
 }
 
 const ServicesContext = createContext<Services | null>(null);

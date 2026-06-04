@@ -15,7 +15,7 @@ export function App() {
   const analytics = useAnalytics();
 
   useEffect(() => {
-    analytics.trackView('home');
+    analytics.pageView('home');
   }, [analytics]);
 
   const navItems = resume.sections.map((s) => ({ id: s.id, title: s.title }));
@@ -24,7 +24,7 @@ export function App() {
     <>
       <Nav name={resume.profile.name} items={navItems} />
       <main className="resume">
-        <Hero profile={resume.profile} onLinkClick={(name) => analytics.trackClick(name)} />
+        <Hero profile={resume.profile} onLinkClick={(name) => analytics.linkClick(name)} />
 
         {resume.sections.map((section) => (
           <Section key={section.id} id={section.id} title={section.title}>

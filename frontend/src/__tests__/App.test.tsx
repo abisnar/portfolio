@@ -6,7 +6,7 @@ import { ServicesProvider, type Services } from '../services/ServicesContext';
 
 function renderWithServices(overrides: Partial<Services> = {}) {
   const services: Services = {
-    analytics: { track: vi.fn().mockResolvedValue(undefined) },
+    analytics: { pageView: vi.fn(), linkClick: vi.fn() },
     ...overrides,
   };
   render(
@@ -25,12 +25,12 @@ describe('App', () => {
 
   it('tracks a page view on mount', () => {
     const services = renderWithServices();
-    expect(services.analytics.track).toHaveBeenCalledWith('view:home');
+    expect(services.analytics.pageView).toHaveBeenCalledWith('home');
   });
 
   it('tracks a click on profile links', async () => {
     const services = renderWithServices();
     await userEvent.click(screen.getByRole('link', { name: /linkedin/i }));
-    expect(services.analytics.track).toHaveBeenCalledWith('click:linkedin');
+    expect(services.analytics.linkClick).toHaveBeenCalledWith('linkedin');
   });
 });
