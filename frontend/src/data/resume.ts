@@ -24,13 +24,28 @@ export const resume: Resume = {
       kind: 'summary',
       title: 'Summary',
       text:
-        'Technical Product Leader with 8+ years designing, shipping, and scaling enterprise data platforms across AppNeta, Vision Critical, and Splunk. MBA candidate at SFU Beedie, translating customer pain points into strategy and roadmap priorities. Skilled at bridging engineering, design, and business to deliver data-driven, user-centric, and cost-optimized products that improve collaboration and productivity.',
+        'Technical Product Leader with 8+ years designing, shipping, and scaling enterprise data platforms across AppNeta, Vision Critical, Splunk, and Aires. MBA candidate at SFU Beedie, translating customer pain points into strategy and roadmap priorities. Skilled at bridging engineering, design, and business to deliver data-driven, user-centric, and cost-optimized products that improve collaboration and productivity.',
     },
     {
       id: 'experience',
       kind: 'experience',
       title: 'Experience',
       items: [
+        {
+          role: 'Software Architecture Consultant',
+          company: 'Aires Technology',
+          location: 'Vancouver, BC',
+          start: 'Nov 2025',
+          end: 'Present',
+          bullets: [
+            'Lead architect on PXP, Aires’ new-home sales platform (TypeScript/Node backend + React admin), driving a server-authoritative re-architecture across ~1,000 commits.',
+            'Designed the canonical sales-transaction lifecycle as a finite-state machine with v2 REST APIs, making transaction state, pricing, and audit gating a single server-side source of truth.',
+            'Migrated the backend to a repository + dependency-injection architecture (generic CRUD repositories, vendor abstractions for signing and email), extracting contract-signing, reporting, and audit domains into typed, testable modules.',
+            'Built the contract-signing and audit subsystems end to end — DocuSeal integration, server-driven signer roles and signing order, and an FSM-based sub-audit approval flow.',
+            'Stood up Redis-backed job-queue/dispatcher/worker infrastructure and third-party integrations (Nylas email/calendar sync, Aircall, webhooks), with async-local-context observability via Winston and Loki.',
+            'Re-platformed the React admin onto the v2 APIs with inline editing, per-field RBAC and audit trails, collapsing client business logic into thin renderers over server-driven DTOs.',
+          ],
+        },
         {
           role: 'Senior Software Engineer',
           company: 'Splunk Canada Services',
