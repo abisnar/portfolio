@@ -3,6 +3,7 @@ import profilePhoto from '../assets/me.jpg';
 import splunkLogo from '../assets/logos/splunk.png';
 import airesLogo from '../assets/logos/aires.png';
 import alidaLogo from '../assets/logos/alida.png';
+import broadcomLogo from '../assets/logos/broadcom.png';
 
 export const resume: Resume = {
   profile: {
@@ -113,6 +114,7 @@ export const resume: Resume = {
         {
           role: 'Software Tester',
           company: 'AppNeta',
+          logo: broadcomLogo,
           location: 'Vancouver, BC',
           start: 'Sep 2013',
           end: 'Dec 2014',
