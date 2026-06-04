@@ -18,7 +18,11 @@ export function Hero({ profile, onLinkClick }: Props) {
       <div className="hero-glow" aria-hidden="true" />
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-inner">
-        <div className="hero-avatar">{initials}</div>
+        {profile.photo ? (
+          <img className="hero-avatar hero-avatar--photo" src={profile.photo} alt={profile.name} />
+        ) : (
+          <div className="hero-avatar">{initials}</div>
+        )}
         <p className="hero-eyebrow">Hello, I’m</p>
         <h1 className="hero-name">{profile.name}</h1>
         <p className="hero-title">{profile.title}</p>

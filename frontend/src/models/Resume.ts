@@ -2,6 +2,7 @@ export interface Profile {
   name: string;
   title: string;
   location?: string;
+  photo?: string;
   links: ProfileLink[];
 }
 
@@ -21,6 +22,7 @@ export interface SummarySection {
 export interface ExperienceItem {
   role: string;
   company: string;
+  logo?: string;
   location?: string;
   start: string;
   end: string;

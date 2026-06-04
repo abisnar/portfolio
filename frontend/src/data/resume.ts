@@ -1,4 +1,7 @@
 import type { Resume } from '../models/Resume';
+import splunkLogo from '../assets/logos/splunk.png';
+import airesLogo from '../assets/logos/aires.png';
+import alidaLogo from '../assets/logos/alida.png';
 
 export const resume: Resume = {
   profile: {
@@ -34,6 +37,7 @@ export const resume: Resume = {
         {
           role: 'Software Architecture Consultant',
           company: 'Aires Technology',
+          logo: airesLogo,
           location: 'Vancouver, BC',
           start: 'Nov 2025',
           end: 'Present',
@@ -64,6 +68,7 @@ export const resume: Resume = {
         {
           role: 'Senior Software Engineer',
           company: 'Splunk Canada Services',
+          logo: splunkLogo,
           location: 'Vancouver, BC',
           start: 'Apr 2020',
           end: 'Jan 2024',
@@ -78,6 +83,7 @@ export const resume: Resume = {
         {
           role: 'Software Development Engineer in Test',
           company: 'Splunk Canada Services',
+          logo: splunkLogo,
           location: 'Vancouver, BC',
           start: 'Feb 2018',
           end: 'Apr 2020',
@@ -91,6 +97,7 @@ export const resume: Resume = {
         {
           role: 'Software Test Engineer / Engineer in Test',
           company: 'Vision Critical',
+          logo: alidaLogo,
           location: 'Vancouver, BC',
           start: 'Oct 2015',
           end: 'Nov 2017',
