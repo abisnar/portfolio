@@ -71,6 +71,10 @@ cd infra/main && terraform plan
 
 Edit `frontend/src/data/resume.ts`. Sections are config-driven — add an entry, it renders.
 
+## Exporting a PDF
+
+`resume.ts` is the single source of truth for both the site and your PDF résumé. Click **Download PDF** (bottom-right on the site) to open the browser's print dialog and save — a print stylesheet (`@media print` in `index.css`) reflows the page into a clean, light, ATS-friendly one-column résumé (no nav, gradients, or animations). Update `resume.ts`, redeploy, and re-export to keep the PDF current.
+
 ## Cost expectations
 
 Free tier covers everything for low-traffic personal use. API Gateway HTTP API drops out of the 12-month free tier at ~$1/M requests. DynamoDB on-demand for an analytics-only workload stays under the 25 RCU/WCU permanent free tier comfortably.

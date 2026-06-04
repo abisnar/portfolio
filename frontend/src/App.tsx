@@ -7,6 +7,7 @@ import { Experience } from './views/Experience';
 import { Education } from './views/Education';
 import { Skills } from './views/Skills';
 import { BulletList } from './views/BulletList';
+import { DownloadResumeButton } from './views/DownloadResumeButton';
 import { useResume } from './controllers/useResume';
 import { useAnalytics } from './controllers/useAnalytics';
 
@@ -23,6 +24,7 @@ export function App() {
   return (
     <>
       <Nav name={resume.profile.name} items={navItems} />
+      <DownloadResumeButton />
       <main className="resume">
         <Hero profile={resume.profile} onLinkClick={(name) => analytics.linkClick(name)} />
 

@@ -473,3 +473,148 @@ html { scroll-behavior: smooth; }
   color: var(--text-faint);
 }
 .footer-sep { opacity: 0.5; }
+
+/* ---------- Download PDF button (screen only) ---------- */
+.download-pdf {
+  position: fixed;
+  right: clamp(1rem, 4vw, 2rem);
+  bottom: 1.25rem;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #08080c;
+  background: var(--grad);
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(43, 108, 255, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.download-pdf:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 38px rgba(43, 108, 255, 0.55);
+}
+.download-pdf span { font-size: 1.05rem; line-height: 1; }
+
+/* ---------- Print: reflow into a clean, ATS-friendly résumé ---------- */
+@media print {
+  @page { size: letter; margin: 14mm 16mm; }
+
+  html, body {
+    background: #fff !important;
+    background-image: none !important;
+    color: #111 !important;
+  }
+  ::selection { background: transparent; }
+
+  /* Drop all screen chrome and decoration */
+  .topnav,
+  .footer,
+  .no-print,
+  .hero-glow,
+  .hero-grid,
+  .hero-eyebrow,
+  .hero-avatar,
+  .btn-arrow,
+  .badge,
+  .exp-logo,
+  .timeline-dot {
+    display: none !important;
+  }
+  .timeline::before { display: none !important; }
+
+  /* Reveal everything (no scroll animation in print) */
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  .resume { max-width: 100%; margin: 0; padding: 0; }
+
+  /* Header */
+  .hero { padding: 0 0 6pt; text-align: left; overflow: visible; }
+  .hero-name {
+    font-size: 22pt;
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+    background: none !important;
+  }
+  .hero-title { color: #222 !important; font-size: 11.5pt; margin-top: 2pt; }
+  .hero-location { color: #555 !important; font-size: 9.5pt; }
+  .hero-links { justify-content: flex-start; gap: 14pt; margin-top: 6pt; }
+  .hero-links .btn {
+    padding: 0;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    color: #1a4fd8 !important;
+    font-size: 9.5pt;
+    font-weight: 600;
+  }
+  .hero-links .btn::after {
+    content: ' — ' attr(href);
+    color: #555;
+    font-weight: 400;
+  }
+
+  /* Sections */
+  .section { padding-top: 11pt; break-inside: avoid; }
+  .section-title { color: #111 !important; font-size: 10pt; margin-bottom: 7pt; }
+  .section-bar { background: #111 !important; }
+
+  .summary { color: #222 !important; font-size: 10.5pt; line-height: 1.45; }
+
+  /* Experience */
+  .timeline-item { padding-left: 0; margin-bottom: 9pt; break-inside: avoid; }
+  .card,
+  .exp-card {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    transform: none !important;
+  }
+  .exp-top { gap: 0; }
+  .exp-role { color: #111 !important; font-size: 11.5pt; }
+  .exp-company {
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+    background: none !important;
+    font-weight: 700;
+    font-size: 10.5pt;
+  }
+  .exp-meta { color: #555 !important; font-size: 9pt; margin-top: 1pt; }
+  .bullets { margin-top: 5pt; gap: 3pt; }
+  .bullets li { color: #222 !important; font-size: 9.5pt; padding-left: 12pt; }
+  .bullets li::before { background: #111 !important; box-shadow: none !important; top: 0.55em; }
+
+  /* Education */
+  .edu-grid { display: block; }
+  .edu-card {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin-bottom: 6pt;
+    break-inside: avoid;
+  }
+  .edu-degree { color: #111 !important; font-size: 10.5pt; }
+  .edu-school { color: #333 !important; font-size: 9.5pt; }
+  .edu-meta { color: #555 !important; font-size: 9pt; }
+  .edu-note { color: #333 !important; font-size: 9pt; }
+
+  /* Skills / interests → compact inline list */
+  .skills { gap: 0; display: block; }
+  .chip {
+    display: inline;
+    padding: 0;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    color: #222 !important;
+    font-size: 9.5pt;
+  }
+  .skills li:not(:last-child)::after { content: ' · '; color: #888; }
+}
