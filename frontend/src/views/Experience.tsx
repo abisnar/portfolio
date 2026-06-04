@@ -10,7 +10,10 @@ export function Experience({ items }: Props) {
       {items.map((item, idx) => (
         <article key={`${item.company}-${idx}`} className="experience-item">
           <div className="role">{item.role} — {item.company}</div>
-          <div className="meta">{item.start} – {item.end}</div>
+          <div className="meta">
+            {item.start} – {item.end}
+            {item.location ? ` · ${item.location}` : ''}
+          </div>
           <ul>
             {item.bullets.map((b, i) => <li key={i}>{b}</li>)}
           </ul>

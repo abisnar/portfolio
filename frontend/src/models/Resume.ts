@@ -11,9 +11,17 @@ export interface ProfileLink {
   href: string;
 }
 
+export interface SummarySection {
+  id: string;
+  kind: 'summary';
+  title: string;
+  text: string;
+}
+
 export interface ExperienceItem {
   role: string;
   company: string;
+  location?: string;
   start: string;
   end: string;
   bullets: string[];
@@ -26,6 +34,21 @@ export interface ExperienceSection {
   items: ExperienceItem[];
 }
 
+export interface EducationItem {
+  school: string;
+  degree: string;
+  location?: string;
+  dates: string;
+  note?: string;
+}
+
+export interface EducationSection {
+  id: string;
+  kind: 'education';
+  title: string;
+  items: EducationItem[];
+}
+
 export interface SkillsSection {
   id: string;
   kind: 'skills';
@@ -33,7 +56,19 @@ export interface SkillsSection {
   items: string[];
 }
 
-export type ResumeSection = ExperienceSection | SkillsSection;
+export interface ListSection {
+  id: string;
+  kind: 'list';
+  title: string;
+  items: string[];
+}
+
+export type ResumeSection =
+  | SummarySection
+  | ExperienceSection
+  | EducationSection
+  | SkillsSection
+  | ListSection;
 
 export interface Resume {
   profile: Profile;

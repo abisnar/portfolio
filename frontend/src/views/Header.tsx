@@ -10,6 +10,7 @@ export function Header({ profile, onLinkClick }: Props) {
     <header>
       <h1>{profile.name}</h1>
       <p className="title">{profile.title}</p>
+      {profile.location && <p className="location">{profile.location}</p>}
       {profile.links.length > 0 && (
         <nav className="links" aria-label="Profile links">
           {profile.links.map((link) => (
