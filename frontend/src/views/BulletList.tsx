@@ -4,7 +4,7 @@ interface Props {
 
 export function BulletList({ items }: Props) {
   return (
-    <ul className="bullet-list">
+    <ul className="bullets bullets-standalone">
       {items.map((item, i) => <li key={i}>{item}</li>)}
     </ul>
   );

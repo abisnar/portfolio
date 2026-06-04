@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { Header } from './views/Header';
+import { Nav } from './views/Nav';
+import { Hero } from './views/Hero';
 import { Section } from './views/Section';
 import { Summary } from './views/Summary';
 import { Experience } from './views/Experience';
@@ -17,19 +18,30 @@ export function App() {
     analytics.trackView('home');
   }, [analytics]);
 
-  return (
-    <main className="resume">
-      <Header profile={resume.profile} onLinkClick={(name) => analytics.trackClick(name)} />
+  const navItems = resume.sections.map((s) => ({ id: s.id, title: s.title }));
 
-      {resume.sections.map((section) => (
-        <Section key={section.id} title={section.title}>
-          {section.kind === 'summary' && <Summary text={section.text} />}
-          {section.kind === 'experience' && <Experience items={section.items} />}
-          {section.kind === 'education' && <Education items={section.items} />}
-          {section.kind === 'skills' && <Skills items={section.items} />}
-          {section.kind === 'list' && <BulletList items={section.items} />}
-        </Section>
-      ))}
-    </main>
+  return (
+    <>
+      <Nav name={resume.profile.name} items={navItems} />
+      <main className="resume">
+        <Hero profile={resume.profile} onLinkClick={(name) => analytics.trackClick(name)} />
+
+        {resume.sections.map((section) => (
+          <Section key={section.id} id={section.id} title={section.title}>
+            {section.kind === 'summary' && <Summary text={section.text} />}
+            {section.kind === 'experience' && <Experience items={section.items} />}
+            {section.kind === 'education' && <Education items={section.items} />}
+            {section.kind === 'skills' && <Skills items={section.items} />}
+            {section.kind === 'list' && <BulletList items={section.items} />}
+          </Section>
+        ))}
+
+        <footer className="footer">
+          <span>© {resume.profile.name}</span>
+          <span className="footer-sep" aria-hidden="true">·</span>
+          <span>Built with React + TypeScript</span>
+        </footer>
+      </main>
+    </>
   );
 }

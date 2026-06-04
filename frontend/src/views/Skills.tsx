@@ -5,7 +5,9 @@ interface Props {
 export function Skills({ items }: Props) {
   return (
     <ul className="skills">
-      {items.map((s) => <li key={s}>{s}</li>)}
+      {items.map((s) => (
+        <li key={s} className="chip">{s}</li>
+      ))}
     </ul>
   );
 }

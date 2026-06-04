@@ -6,18 +6,18 @@ interface Props {
 
 export function Education({ items }: Props) {
   return (
-    <>
+    <div className="edu-grid">
       {items.map((item, idx) => (
-        <article key={`${item.school}-${idx}`} className="education-item">
-          <div className="degree">{item.degree}</div>
-          <div className="school">
+        <article key={`${item.school}-${idx}`} className="card edu-card">
+          <div className="edu-degree">{item.degree}</div>
+          <div className="edu-school">
             {item.school}
-            {item.location ? ` — ${item.location}` : ''}
+            {item.location ? ` · ${item.location}` : ''}
           </div>
-          <div className="meta">{item.dates}</div>
-          {item.note && <p className="note">{item.note}</p>}
+          <div className="edu-meta">{item.dates}</div>
+          {item.note && <p className="edu-note">{item.note}</p>}
         </article>
       ))}
-    </>
+    </div>
   );
 }

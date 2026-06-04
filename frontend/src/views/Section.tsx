@@ -1,15 +1,22 @@
 import type { ReactNode } from 'react';
+import { Reveal } from './Reveal';
 
 interface Props {
+  id: string;
   title: string;
   children: ReactNode;
 }
 
-export function Section({ title, children }: Props) {
+export function Section({ id, title, children }: Props) {
   return (
-    <section className="section">
-      <h2>{title}</h2>
-      {children}
-    </section>
+    <Reveal>
+      <section id={id} className="section">
+        <h2 className="section-title">
+          <span className="section-bar" aria-hidden="true" />
+          {title}
+        </h2>
+        <div className="section-body">{children}</div>
+      </section>
+    </Reveal>
   );
 }
