@@ -1,6 +1,12 @@
 # resume-app
 
-Personal portfolio resume site. Static React+TS frontend on S3/CloudFront; serverless analytics backend (Lambda + API Gateway + DynamoDB). Provisioned with Terraform, deployed by GitHub Actions, designed to stay inside the AWS free tier.
+Personal portfolio resume site. Static React+TS frontend; serverless analytics backend (Lambda + API Gateway + DynamoDB) for the AWS path.
+
+## Hosting
+
+Live on **GitHub Pages** at https://abisnar.github.io/portfolio/. Pushes to `main` build the frontend and deploy via `.github/workflows/pages.yml`. The frontend degrades gracefully without a backend — when `VITE_API_ENDPOINT` is unset it uses a no-op analytics service, so Pages needs no server.
+
+The original AWS S3/CloudFront + Lambda pipeline (`.github/workflows/deploy.yml`, `infra/`) is preserved but runs only on manual dispatch.
 
 ## Prereqs
 
