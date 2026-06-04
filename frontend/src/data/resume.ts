@@ -32,20 +32,6 @@ export const resume: Resume = {
       title: 'Experience',
       items: [
         {
-          role: 'Founder & Principal Consultant',
-          company: 'Bisnar Technology Consulting Ltd.',
-          location: 'Vancouver, BC',
-          start: 'Jan 2026',
-          end: 'Present',
-          bullets: [
-            'Independent consultancy delivering AI engineering, software architecture, and full-stack development for clients.',
-            'Build AI-powered features and agentic workflows, pair-programming with Claude and Cursor to ship faster.',
-            'Design end-to-end system architecture and lead full-stack delivery across frontend and backend.',
-            'Design and build client web presence on Wix, with marketing, SEO, and GEO (generative engine optimization) to grow visibility.',
-            'Drive application and site performance optimization for faster, more reliable user experiences.',
-          ],
-        },
-        {
           role: 'Software Architecture Consultant',
           company: 'Aires Technology',
           location: 'Vancouver, BC',
@@ -59,6 +45,20 @@ export const resume: Resume = {
             'Stood up Redis-backed job-queue/dispatcher/worker infrastructure and third-party integrations (Nylas email/calendar sync, Aircall, webhooks), with async-local-context observability via Winston and Loki.',
             'Re-platformed the React admin onto the v2 APIs with inline editing, per-field RBAC and audit trails, collapsing client business logic into thin renderers over server-driven DTOs.',
             'Accelerated delivery with AI-augmented workflows — pair-programming with Cursor and Claude, building MCP servers to connect agents to internal systems, and wiring Notion into planning and documentation to keep specs, tickets, and code in sync.',
+          ],
+        },
+        {
+          role: 'Founder & Principal Consultant',
+          company: 'Bisnar Technology Consulting Ltd.',
+          location: 'Vancouver, BC',
+          start: 'Jan 2026',
+          end: 'Present',
+          bullets: [
+            'Independent consultancy delivering AI engineering, software architecture, and full-stack development for clients.',
+            'Build AI-powered features and agentic workflows, pair-programming with Claude and Cursor to ship faster.',
+            'Design end-to-end system architecture and lead full-stack delivery across frontend and backend.',
+            'Design and build client web presence on Wix, with marketing, SEO, and GEO (generative engine optimization) to grow visibility.',
+            'Drive application and site performance optimization for faster, more reliable user experiences.',
           ],
         },
         {
