@@ -45,7 +45,7 @@ export const resume: Resume = {
           start: 'Nov 2025',
           end: 'Present',
           bullets: [
-            'Lead architect on PXP, Aires’ new-home sales platform (TypeScript/Node backend + React admin), driving a server-authoritative re-architecture across ~1,000 commits.',
+            'Lead architect on the Aires Platform, a new-home sales platform (TypeScript/Node backend + React admin), driving a server-authoritative re-architecture across ~1,000 commits.',
             'Designed the canonical sales-transaction lifecycle as a finite-state machine with v2 REST APIs, making transaction state, pricing, and audit gating a single server-side source of truth.',
             'Migrated the backend to a repository + dependency-injection architecture (generic CRUD repositories, vendor abstractions for signing and email), extracting contract-signing, reporting, and audit domains into typed, testable modules.',
             'Built the contract-signing and audit subsystems end to end — DocuSeal integration, server-driven signer roles and signing order, and an FSM-based sub-audit approval flow.',
