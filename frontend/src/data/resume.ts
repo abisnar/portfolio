@@ -79,7 +79,7 @@ export const resume: Resume = {
             'Built, tested, and deployed the HTTP Event Collector (HEC) ingest microservice for push-based data ingestion and Splunk-to-Splunk (S2S) ingestion services — Go, Postgres, Kubernetes, Istio, Terraform, AWS, with secrets via consul-template + HashiCorp Vault and metrics via Prometheus.',
             "Automated, refactored, and tested Large Scale Data Collection (LSDC), a pull-based connector platform for Splunk's Data Stream Processor — Go, Kubernetes, Istio, Terraform, AWS.",
             "Shipped Splunk's Data Stream Processor (DSP, Kafka/Flink) on-prem, enabling an enterprise customer to ingest > 1 PB/day of telemetry data.",
-            'Partnered with Product and SRE teams to prioritize performance-vs-cost trade-offs, using KubeCost to cut $5,000/month in cloud spend while maintaining 99.99% uptime.',
+            'Partnered with Product and SRE teams to prioritize performance-vs-cost trade-offs, using KubeCost to cut $2,000+/month in cloud spend while maintaining 99.99% uptime.',
             'Defined metrics and dashboards with OTEL + Prometheus to monitor ingestion latency and reliability; mentored engineers and drove outcome-focused sprint retrospectives.',
           ],
         },
