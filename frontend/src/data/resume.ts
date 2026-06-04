@@ -24,7 +24,7 @@ export const resume: Resume = {
       kind: 'summary',
       title: 'Summary',
       text:
-        'Technical Product Leader with 8+ years designing, shipping, and scaling enterprise data platforms across AppNeta, Vision Critical, Splunk, and Aires. MBA candidate at SFU Beedie, translating customer pain points into strategy and roadmap priorities. An early adopter of AI-augmented development — pairing with Cursor and Claude, building MCP integrations, and orchestrating tools like Notion to compress delivery cycles. Skilled at bridging engineering, design, and business to deliver data-driven, user-centric, and cost-optimized products that improve collaboration and productivity.',
+        'Technical Product Leader with 8+ years designing, shipping, and scaling enterprise data platforms across AppNeta, Vision Critical, Splunk, and Aires. MBA graduate from SFU Beedie, translating customer pain points into strategy and roadmap priorities. An early adopter of AI-augmented development — pairing with Cursor and Claude, building MCP integrations, and orchestrating tools like Notion to compress delivery cycles. Skilled at bridging engineering, design, and business to deliver data-driven, user-centric, and cost-optimized products that improve collaboration and productivity.',
     },
     {
       id: 'experience',
@@ -111,7 +111,7 @@ export const resume: Resume = {
           school: 'Simon Fraser University — Beedie School of Business',
           degree: 'Master of Business Administration (Full-Time)',
           location: 'Vancouver, BC',
-          dates: 'Expected July 2026',
+          dates: 'Graduated June 2026',
           note: 'Focus on Strategy, Innovation, Product Management & Analytics.',
         },
         {
