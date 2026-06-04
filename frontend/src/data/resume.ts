@@ -1,4 +1,5 @@
 import type { Resume } from '../models/Resume';
+import profilePhoto from '../assets/me.jpg';
 import splunkLogo from '../assets/logos/splunk.png';
 import airesLogo from '../assets/logos/aires.png';
 import alidaLogo from '../assets/logos/alida.png';
@@ -8,6 +9,7 @@ export const resume: Resume = {
     name: 'Allan Bisnar',
     title: 'Technical Product Leader',
     location: 'Vancouver, BC, Canada',
+    photo: profilePhoto,
     links: [
       {
         name: 'linkedin',
