@@ -12,7 +12,8 @@ export function DownloadResumeButton() {
       onClick={() => window.print()}
       aria-label="Download résumé as PDF"
     >
-      <span aria-hidden="true">⤓</span> Download PDF
+      <span aria-hidden="true">⤓</span>
+      <span className="download-pdf-label">Download PDF</span>
     </button>
   );
 }
