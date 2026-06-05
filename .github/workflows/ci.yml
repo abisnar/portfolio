@@ -5,9 +5,14 @@ on:
   push:
     branches: [main]
 
+# Least privilege by default; only the terraform job opts into id-token below.
 permissions:
   contents: read
-  id-token: write
+
+# Cancel superseded runs on a PR; let pushes to main always finish.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   frontend:
@@ -23,6 +28,8 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
+      # Fail the build on newly introduced high/critical advisories.
+      - run: npm audit --audit-level=high
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
@@ -41,6 +48,8 @@ jobs:
           cache: npm
           cache-dependency-path: backend/package-lock.json
       - run: npm ci
+      # Fail the build on newly introduced high/critical advisories.
+      - run: npm audit --audit-level=high
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
@@ -48,6 +57,10 @@ jobs:
 
   terraform:
     runs-on: ubuntu-latest
+    # AWS OIDC for the optional plan step; scoped to this job only.
+    permissions:
+      contents: read
+      id-token: write
     defaults:
       run:
         working-directory: infra/main

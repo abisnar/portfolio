@@ -4,10 +4,14 @@ import type { APIGatewayProxyEventV2 } from 'aws-lambda';
 const increment = vi.fn().mockResolvedValue(undefined);
 
 vi.mock('../../src/repositories/DynamoAnalyticsRepository', () => ({
-  DynamoAnalyticsRepository: vi.fn().mockImplementation(() => ({
-    increment,
-    list: vi.fn().mockResolvedValue([]),
-  })),
+  // Implementation must be a regular function (not an arrow) so vitest can
+  // invoke it with `new` — the factory constructs the repository.
+  DynamoAnalyticsRepository: vi.fn().mockImplementation(function () {
+    return {
+      increment,
+      list: vi.fn().mockResolvedValue([]),
+    };
+  }),
 }));
 
 function makeEvent(body: unknown, method = 'POST'): APIGatewayProxyEventV2 {
